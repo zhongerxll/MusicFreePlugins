@@ -1,7 +1,8 @@
-const axios = require("axios");
-const source = "netease";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const axios_1 = require("axios");
 module.exports = {
-    platform: "网易云",
+    platform: "Netease",
     author: "@咔咔龙@zhongerxll@kakadragonn",
     version: "0.0.1",
     srcUrl: "https://raw.githubusercontent.com/zhongerxll/MusicFreePlugins/refs/heads/master/dist/netease/index.js",
@@ -9,10 +10,10 @@ module.exports = {
     supportedSearchType: ["music", "album", "lyric"],
     async search(query, page, type) {
         if (type === "music") {
-            let response = (await axios.get("https://music-api.gdstudio.xyz/api.php", {
+            let response = (await axios_1.default.get("https://music-api.gdstudio.xyz/api.php", {
                 params: {
                     types: "search",
-                    source: source,
+                    source: "netease",
                     name: query,
                     pages: page
                 }
@@ -38,10 +39,10 @@ module.exports = {
             high: "320",
             super: "740"
         };
-        const url = (await axios.get("https://music-api.gdstudio.xyz/api.php", {
+        const url = (await axios_1.default.get("https://music-api.gdstudio.xyz/api.php", {
             params: {
                 types: "url",
-                source: source,
+                source: "netease",
                 id: musicItem.id,
                 br: qualityLevels[quality]
             }
@@ -51,10 +52,10 @@ module.exports = {
         };
     },
     async getMusicInfo(musicItem) {
-        const artwork = (await axios.get("https://music-api.gdstudio.xyz/api.php", {
+        const artwork = (await axios_1.default.get("https://music-api.gdstudio.xyz/api.php", {
             params: {
                 types: "pic",
-                source: source,
+                source: "netease",
                 id: musicItem.pic_id,
                 size: "500"
             }
@@ -64,10 +65,10 @@ module.exports = {
         };
     },
     async getLyric(musicItem) {
-        const lrc = (await axios.get("https://music-api.gdstudio.xyz/api.php", {
+        const lrc = (await axios_1.default.get("https://music-api.gdstudio.xyz/api.php", {
             params: {
                 types: "lyric",
-                source: source,
+                source: "netease",
                 id: musicItem.lyric_id,
             }
         })).data.lyric;

@@ -1,10 +1,10 @@
 import axios from "axios";
 
 module.exports = {
-  platform: "Netease",
+  platform: "Tencent",
   author: "@咔咔龙@zhongerxll@kakadragonn",
   version: "0.0.1",
-  srcUrl: "https://raw.githubusercontent.com/zhongerxll/MusicFreePlugins/refs/heads/master/dist/netease/index.js",
+  srcUrl: "https://raw.githubusercontent.com/zhongerxll/MusicFreePlugins/refs/heads/master/dist/tencent/index.js",
   cacheControl: "no-cache",
   supportedSearchType: ["music", "album", "lyric"],
 
@@ -14,7 +14,7 @@ module.exports = {
         await axios.get("https://music-api.gdstudio.xyz/api.php", {
           params: {
             types: "search",
-            source: "netease",
+            source: "tencent",
             name: query,
             pages: page
           }
@@ -49,7 +49,7 @@ module.exports = {
       await axios.get("https://music-api.gdstudio.xyz/api.php", {
         params: {
           types: "url",
-          source: "netease",
+          source: "tencent",
           id: musicItem.id,
           br: qualityLevels[quality]
         }
@@ -65,7 +65,7 @@ module.exports = {
       await axios.get("https://music-api.gdstudio.xyz/api.php", {
         params: {
           types: "pic",
-          source: "netease",
+          source: "tencent",
           id: musicItem.pic_id,
           size: "500"
         }
@@ -81,7 +81,7 @@ module.exports = {
       await axios.get("https://music-api.gdstudio.xyz/api.php", {
         params: {
           types: "lyric",
-          source: "netease",
+          source: "tencent",
           id: musicItem.lyric_id,
         }
       })

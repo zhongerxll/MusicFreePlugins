@@ -1,1 +1,1 @@
-{"plugins":[]}
+{"plugins":[{"name":"网易云","url":"https://raw.githubusercontent.com/zhongerxll/MusicFreePlugins/refs/heads/master/dist/netease/index.js","version":"0.0.1"},{"name":"Tencent","url":"https://raw.githubusercontent.com/zhongerxll/MusicFreePlugins/refs/heads/master/dist/tencent/index.js","version":"0.0.1"}]}
